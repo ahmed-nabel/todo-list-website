@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Registration Page" />
+    <meta name="keywords" content="Front-End, HTML, CSS" />
+    <meta name="author" content="Ahmed Nabel" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <title>Register Page</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body data-page="register">
+    <main class="wrapper">
+      <section class="register-card">
+        <div class="illustration">
+          <img
+            src="assets/images/login&register/R 2.jpg"
+            alt="Sign Up Illustration"
+          />
+        </div>
+
+        <div class="form-box">
+          <h1>Sign Up</h1>
+          <form action="/register" method="post" class="register-form">
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-name"></use>
+              </svg>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Enter First Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-name"></use>
+              </svg>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Enter Last Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-username"></use>
+              </svg>
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-email"></use>
+              </svg>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-password"></use>
+              </svg>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-confirmPass"></use>
+              </svg>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox">
+                <input type="checkbox" name="terms" required />
+                I agree to all terms
+              </label>
+            </div>
+
+            <button type="submit" class="btn-register">Register</button>
+          </form>
+
+          <p class="redirect">
+            Already have an account? <a href="login.html">Sign In</a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+@import url("colors.css");
+
+/* Start general */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  /* making a main font size 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+@layer pages;
+
+@layer pages {
+  body[data-page="index"] {
+    font-family: "Roboto", sans-serif;
+  }
+  body[data-page="login"] {
+    font-family: "Login_Register-Medium", sans-serif;
+    background-image: url("../assets/images/login&register/login.jpg");
+    position: relative;
+
+    &::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: hsl(var(--loginBg-color));
+      mix-blend-mode: multiply; /* or overlay, screen, etc. */
+      z-index: -1;
+    }
+  }
+  body[data-page="register"] {
+    font-family: "Login_Register-Medium", sans-serif;
+    background-image: url("../assets/images/login&register/login.jpg");
+    position: relative;
+
+    &::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: hsl(var(--loginBg-color));
+      mix-blend-mode: multiply; /* or overlay, screen, etc. */
+      z-index: -1;
+    }
+  }
+}
+
+svg {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-family: "Login_Register-Bold";
+  font-weight: 700;
+  color: hsl(var(--formHeading-color));
+}
+
+.wrapper {
+  container-type: inline-size;
+}
+@container (min-width: 1200px) {
+  .register-card {
+    max-width: 1236px;
+  }
+}
+.register-card {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 200px;
+  margin: 50px auto;
+  background-color: hsl(var(--formBg-color));
+  border-radius: 10px;
+  min-height: calc(100vh - 100px);
+}
+@layer cards;
+
+@layer cards {
+  .register-card[data-card="login"] {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.illustration img {
+  width: auto;
+  height: 400px;
+}
+
+.form-box {
+  flex: 2;
+  margin: 10px 50px 10px 0;
+  max-width: 559px;
+  font-family: "Login_Register-Medium";
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.form-box > * {
+  padding-block-end: 10px;
+}
+.register-form > * {
+  padding-block-end: 10px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  transform: translateY(50%);
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 0 10px 45px;
+  font-family: "Login_Register-Medium";
+  font-size: 1.6rem;
+  font-weight: 500;
+  border: 1px solid hsl(var(--formBr-color));
+}
+input::placeholder {
+  color: hsl(var(--formPlaceholder-color));
+}
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+
+  color: hsl(var(--formHeading-color));
+}
+
+.btn-register {
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 30px;
+  background-color: hsl(var(--btnBg-color));
+  color: hsl(var(--btnWord-color));
+  transition: background-color 0.3s ease;
+  font-family: "Login_Register-Medium";
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.btn-register:hover {
+  cursor: pointer;
+  background-color: hsl(var(--loginBg-color));
+}
+
+.redirect a {
+  color: hsl(var(--signin-color));
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links svg {
+  transform: translateY(-10%);
+}

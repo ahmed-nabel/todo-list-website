@@ -1,0 +1,13 @@
+@import url("fonts.css");
+
+:root {
+  --main-color: 0 0% 0%;
+  --formBr-color: 0 1% 33%;
+  --formPlaceholder-color: 0 0% 60%;
+  --formHeading-color: 210 8% 14%;
+  --signin-color: 202 100% 43%;
+  --btnWord-color: 210 31% 98%;
+  --loginBg-color: 0 100% 70%;
+  --btnBg-color: 0 100% 78%;
+  --formBg-color: 0 0% 100%;
+}

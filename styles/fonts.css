@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Login_Register-Bold";
+  src: url("../assets/fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Login_Register-Medium";
+  src: url("../assets/fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}

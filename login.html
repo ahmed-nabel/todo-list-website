@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is Login Page" />
+    <meta name="keywords" content="Front-End, HTML, CSS" />
+    <meta name="author" content="Ahmed Nabel" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body data-page="login">
+    <main class="wrapper">
+      <section class="register-card" data-card="login">
+        <div class="illustration">
+          <img
+            src="assets/images/login&register/ach3 1.png"
+            alt="Sign Up Illustration"
+          />
+        </div>
+
+        <div class="form-box">
+          <h1>Sign In</h1>
+          <form action="/register" method="post" class="register-form">
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-username"></use>
+              </svg>
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <svg
+                class="icon"
+                width="20"
+                height="20"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-password"></use>
+              </svg>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                required
+              />
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox">
+                <input type="checkbox" name="remember" />
+                Remember Me
+              </label>
+            </div>
+
+            <button type="submit" class="btn-register">Login</button>
+          </form>
+          <div class="socials">
+            <p>Or, Login with</p>
+            <div class="social-links">
+              <a href="">
+                <svg
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <use href="assets/icons/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+              <a href="">
+                <svg
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <use href="assets/icons/icons.svg#icon-google"></use>
+                </svg>
+              </a>
+              <a href="">
+                <svg
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <use href="assets/icons/icons.svg#icon-vector"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <p class="redirect">
+            Don't have an account? <a href="register.html">Create One</a>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
