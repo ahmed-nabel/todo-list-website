@@ -72,6 +72,47 @@ function showMessage(msg) {
 const page = document.body.dataset.page;
 const form = document.querySelector(".register-form");
 
+// logic of arabic - english toggle at login and register
+
+const langToggleBtn = document.getElementById("langToggle");
+let currentLang = localStorage.getItem("lang") || "en";
+
+if (page === "login" || page === "register") {
+  // Apply language on load
+  document.addEventListener("DOMContentLoaded", () => {
+    applyLanguage(currentLang);
+  });
+
+  langToggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "ar" : "en";
+    localStorage.setItem("lang", currentLang);
+    applyLanguage(currentLang);
+  });
+
+  function applyLanguage(lang) {
+    const langData = translations[lang];
+
+    // Update button text
+    langToggleBtn.textContent = lang === "en" ? "العربية" : "English";
+
+    // Update text content
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (langData[key]) el.textContent = langData[key];
+    });
+
+    // Update placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (langData[key]) el.placeholder = langData[key];
+    });
+
+    // Optional: Set direction for Arabic
+    document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    document.documentElement.setAttribute("lang", lang);
+  }
+}
+
 if (page === "login") {
   // --- Login Form Logic ---
   if (form && document.body.dataset.page === "login") {
@@ -766,43 +807,4 @@ if (page === "login") {
     renderTasks(); // Render existing tasks
     attachTaskActions(); // Attach all menu + button events (once)
   });
-}
-
-// logic of arabic - english toggle at login and register
-
-const langToggleBtn = document.getElementById("langToggle");
-let currentLang = localStorage.getItem("lang") || "en";
-
-// Apply language on load
-document.addEventListener("DOMContentLoaded", () => {
-  applyLanguage(currentLang);
-});
-
-langToggleBtn.addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "ar" : "en";
-  localStorage.setItem("lang", currentLang);
-  applyLanguage(currentLang);
-});
-
-function applyLanguage(lang) {
-  const langData = translations[lang];
-
-  // Update button text
-  langToggleBtn.textContent = lang === "en" ? "العربية" : "English";
-
-  // Update text content
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (langData[key]) el.textContent = langData[key];
-  });
-
-  // Update placeholders
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-placeholder");
-    if (langData[key]) el.placeholder = langData[key];
-  });
-
-  // Optional: Set direction for Arabic
-  document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-  document.documentElement.setAttribute("lang", lang);
 }

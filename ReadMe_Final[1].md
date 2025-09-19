@@ -115,7 +115,8 @@ Layer Technology
 5.  ⚙️ Adjust **user info and settings**\
 6.  🧾 Add a **Vital Tasks Page**\
 7.  📝 Use **module files** for the main script file\
-8.  ⚛️ Create another version using **React, Redux, and Tailwind/SCSS**
+8.  📝 Add **drag & drop** functionality for the tasks created\
+9.  ⚛️ Create another version using **React, Redux, and Tailwind/SCSS**
     for a full SPA
 
 ---
