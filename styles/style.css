@@ -21,9 +21,6 @@ body {
 @layer pages;
 
 @layer pages {
-  body[data-page="index"] {
-    font-family: "Roboto", sans-serif;
-  }
   body[data-page="login"] {
     font-family: "Login_Register-Medium", sans-serif;
     background-image: url("../assets/images/login&register/login.jpg");
@@ -111,7 +108,8 @@ h1 {
 
 .form-box {
   flex: 2;
-  margin: 10px 50px 10px 0;
+  margin-block: 10px;
+  margin-inline-end: 50px;
   max-width: 559px;
   font-family: "Login_Register-Medium";
   font-size: 1.6rem;
@@ -131,7 +129,7 @@ h1 {
 
 .icon {
   position: absolute;
-  left: 10px;
+  inset-inline-start: 10px;
   transform: translateY(50%);
 }
 
@@ -139,7 +137,9 @@ h1 {
   width: 100%;
   border: 1px solid black;
   border-radius: 5px;
-  padding: 10px 0 10px 45px;
+  /* padding: 10px 0 10px 45px; */
+  padding-block: 10px;
+  padding-inline-start: 45px;
   font-family: "Login_Register-Medium";
   font-size: 1.6rem;
   font-weight: 500;
@@ -186,4 +186,24 @@ input::placeholder {
 
 .social-links svg {
   transform: translateY(-10%);
+}
+
+.language-switcher {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  position: fixed;
+  inset: 0;
+  height: 50px;
+}
+
+#langToggle {
+  font-size: 1.6rem;
+  padding-inline: 5px;
+  padding-block: 2px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(var(--white-color));
+  border-radius: 5px;
 }

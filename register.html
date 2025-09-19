@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,9 @@
     <script src="scripts/script.js" defer></script>
   </head>
   <body data-page="register">
+    <div class="language-switcher">
+      <button id="langToggle">🇬🇧 English</button>
+    </div>
     <main class="wrapper">
       <section class="register-card">
         <div class="illustration">
@@ -22,7 +25,7 @@
         </div>
 
         <div class="form-box">
-          <h1>Sign Up</h1>
+          <h1 data-i18n="signUp">Sign Up</h1>
           <form action="/register" method="post" class="register-form">
             <div class="form-group">
               <svg
@@ -40,6 +43,7 @@
                 name="firstName"
                 placeholder="Enter First Name"
                 required
+                data-i18n-placeholder="firstName"
               />
             </div>
             <div class="form-group">
@@ -57,6 +61,7 @@
                 type="text"
                 name="lastName"
                 placeholder="Enter Last Name"
+                data-i18n-placeholder="lastName"
                 required
               />
             </div>
@@ -75,6 +80,7 @@
                 type="text"
                 name="username"
                 placeholder="Enter Username"
+                data-i18n-placeholder="username"
                 required
               />
             </div>
@@ -93,6 +99,7 @@
                 type="email"
                 name="email"
                 placeholder="Enter Email"
+                data-i18n-placeholder="email"
                 required
               />
             </div>
@@ -111,6 +118,7 @@
                 type="password"
                 name="password"
                 placeholder="Enter Password"
+                data-i18n-placeholder="password"
                 required
               />
             </div>
@@ -129,6 +137,7 @@
                 type="password"
                 name="confirmPassword"
                 placeholder="Confirm Password"
+                data-i18n-placeholder="confirmPassword"
                 required
               />
             </div>
@@ -136,15 +145,18 @@
             <div class="form-options">
               <label class="checkbox">
                 <input type="checkbox" name="terms" required />
-                I agree to all terms
+                <span data-i18n="agreeTerms">I agree to all terms</span>
               </label>
             </div>
 
-            <button type="submit" class="btn-register">Register</button>
+            <button type="submit" class="btn-register" data-i18n="register">
+              Register
+            </button>
           </form>
 
           <p class="redirect">
-            Already have an account? <a href="login.html">Sign In</a>
+            <span data-i18n="alreadyHaveAccount">Already have an account?</span>
+            <a href="login.html" data-i18n="login">Sign In</a>
           </p>
         </div>
       </section>

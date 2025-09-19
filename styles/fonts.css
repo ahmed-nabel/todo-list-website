@@ -8,3 +8,27 @@
   src: url("../assets/fonts/Montserrat-Medium.ttf");
   font-weight: 500;
 }
+
+@font-face {
+  font-family: "Home-Medium";
+  src: url("../assets/fonts/Inter_18pt-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Home-Regular";
+  src: url("../assets/fonts/Inter_18pt-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Home-Bold";
+  src: url("../assets/fonts/Inter_18pt-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Home-SemiBold";
+  src: url("../assets/fonts/Inter_18pt-SemiBold.ttf");
+  font-weight: 600;
+}

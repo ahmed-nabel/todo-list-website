@@ -1,7 +1,7 @@
 @import url("fonts.css");
 
 :root {
-  --main-color: 0 0% 0%;
+  --white-color: 0 0% 100%;
   --formBr-color: 0 1% 33%;
   --formPlaceholder-color: 0 0% 60%;
   --formHeading-color: 210 8% 14%;
@@ -10,4 +10,18 @@
   --loginBg-color: 0 100% 70%;
   --btnBg-color: 0 100% 78%;
   --formBg-color: 0 0% 100%;
+  --black-color: 0 0% 0%;
+  --searchPlaceholder-color: 227 6% 65%;
+  --date-color: 200 100% 61%;
+  --headerBg-color: 0 0% 97%;
+  --searchBg-color: 222 100% 98%;
+  --liBorder-color: 227 6% 65%;
+  --liPara-color: 0 0% 45%;
+  --todoWrapperBr-color: 161 163% 171%;
+  --notStarted-color: 0 89% 53%;
+  --inProgress-color: 232 100% 50%;
+  --completed-color: 119 99% 32%;
+  --priorityLow-color: 0 0% 50%;
+  --priorityModerate-color: 200 73% 57%;
+  --priorityHigh-color: 0 89% 53%;
 }

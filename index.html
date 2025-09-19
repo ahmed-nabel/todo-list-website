@@ -8,8 +8,357 @@
     <meta name="author" content="Ahmed Nabel" />
     <meta name="format-detection" content="telephone=no,email=no,address=no" />
     <title>Home Page</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/home.css" />
     <script src="scripts/script.js" defer></script>
   </head>
-  <body data-page="index"></body>
+  <body data-page="home">
+    <header>
+      <div class="container-header">
+        <h1 class="logo"><span class="text-red">Dash</span>board</h1>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="taskSearch"
+            placeholder="Search your task here..."
+          />
+          <button class="icon-btn">
+            <svg
+              width="17"
+              height="16"
+              fill="currentColor"
+              role="img"
+              aria-hidden="true"
+            >
+              <use href="assets/icons/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="notificationBtn"
+            aria-label="Notifications"
+          >
+            <svg
+              width="15"
+              height="16"
+              fill="currentColor"
+              role="img"
+              aria-hidden="true"
+            >
+              <use href="assets/icons/icons.svg#icon-notifications"></use>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="calendarBtn" aria-label="Calendar">
+            <svg
+              width="15"
+              height="15"
+              fill="currentColor"
+              role="img"
+              aria-hidden="true"
+            >
+              <use href="assets/icons/icons.svg#icon-calender"></use>
+            </svg>
+
+            <div class="date-display">
+              <span class="day">Tuesday</span>
+              <span class="date">28/09/2023</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container-main">
+        <aside class="sidebar">
+          <!-- Hidden file input -->
+          <input type="file" id="avatarUpload" accept="image/*" hidden />
+          <div class="profile">
+            <h3 class="sidebarName">Sundar Gurung</h3>
+            <p id="sidebarEmail">sundar@projectapp.com</p>
+          </div>
+
+          <nav class="nav-menu">
+            <a
+              href="/dashboard"
+              data-section="dashboard"
+              class="nav-link active"
+            >
+              <svg
+                class="icon-sidebar"
+                width="24"
+                height="24"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-dashboard"></use></svg
+              >Dashboard</a
+            >
+            <a href="/calendar" data-section="calendar" class="nav-link">
+              <svg
+                class="icon-sidebar"
+                width="24"
+                height="24"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-myTask"></use></svg
+              >Calendar</a
+            >
+            <a href="/settings" data-section="settings" class="nav-link">
+              <svg
+                class="icon-sidebar"
+                width="24"
+                height="24"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-settings"></use></svg
+              >Settings</a
+            >
+          </nav>
+
+          <a href="#" id="logoutBtn" class="nav-link">
+            <svg
+              class="icon-sidebar"
+              width="24"
+              height="24"
+              fill="currentColor"
+              role="img"
+              aria-hidden="true"
+            >
+              <use href="assets/icons/icons.svg#icon-logout"></use>
+            </svg>
+            Logout</a
+          >
+        </aside>
+
+        <section id="dashboard" class="page active">
+          <div class="dashboard-flex">
+            <h1>
+              Welcome back, <span class="sidebarName"></span>
+              <svg
+                width="43"
+                height="41"
+                fill="currentColor"
+                role="img"
+                aria-hidden="true"
+              >
+                <use href="assets/icons/icons.svg#icon-handwave"></use>
+              </svg>
+            </h1>
+            <div class="dashboard-wrapper">
+              <div class="todo">
+                <div class="todo-head">
+                  <h2 class="heading-red">
+                    <svg
+                      width="29"
+                      height="33"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use
+                        href="assets/icons/icons.svg#icon-pending"
+                      ></use></svg
+                    >To-Do
+                  </h2>
+                  <button type="button" id="addTaskBtn">
+                    <span class="text-red">+</span> add Task
+                  </button>
+                </div>
+                <ul class="task-list"></ul>
+              </div>
+              <div class="modal-overlay" id="taskModal" style="display: none">
+                <div class="modal">
+                  <h3 class="modal-heading">Add Task</h3>
+                  <form id="taskForm">
+                    <div class="form-group">
+                      <label
+                        >Title <input type="text" name="title" required
+                      /></label>
+                    </div>
+                    <div class="form-group">
+                      <label
+                        >Task Description
+                        <textarea
+                          name="description"
+                          cols="40"
+                          rows="10"
+                          required
+                          placeholder="Start writing here..."
+                        ></textarea>
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label
+                        >Priority
+                        <select name="priority">
+                          <option>Low</option>
+                          <option>Moderate</option>
+                          <option>High</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label
+                        >Status
+                        <select name="status">
+                          <option value="not-started">Not Started</option>
+                          <option value="in-progress">In Progress</option>
+                        </select>
+                      </label>
+                    </div>
+
+                    <div class="btn-group">
+                      <button type="submit">Add Task</button>
+                      <button type="button" id="closeModal">Cancel</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- Task Full View Modal -->
+              <div
+                class="modal-overlay"
+                style="display: none"
+                id="taskFullViewModal"
+              >
+                <div class="modal">
+                  <button
+                    class="close-modal"
+                    aria-label="Close View"
+                    title="Close"
+                  >
+                    ✕
+                  </button>
+                  <div class="modal-body">
+                    <!-- Task details will be dynamically inserted here -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="task-wrapper">
+                <div class="task-status">
+                  <h2 class="heading-red">
+                    <svg
+                      width="21"
+                      height="24"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-book"></use></svg
+                    >Task Status
+                  </h2>
+                  <div class="task-status-charts">
+                    <!-- Completed -->
+                    <div class="chart-container" data-status="completed">
+                      <svg class="progress-ring" width="100" height="100">
+                        <circle
+                          class="progress-ring__background"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                        <circle
+                          class="progress-ring__circle"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                      </svg>
+                      <div class="chart-label">
+                        <span class="percentage">0%</span>
+                        <span class="status-name">Completed</span>
+                      </div>
+                    </div>
+
+                    <!-- In Progress -->
+                    <div class="chart-container" data-status="in-progress">
+                      <svg class="progress-ring" width="100" height="100">
+                        <circle
+                          class="progress-ring__background"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                        <circle
+                          class="progress-ring__circle"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                      </svg>
+                      <div class="chart-label">
+                        <span class="percentage">0%</span>
+                        <span class="status-name">In Progress</span>
+                      </div>
+                    </div>
+
+                    <!-- Not Started -->
+                    <div class="chart-container" data-status="not-started">
+                      <svg class="progress-ring" width="100" height="100">
+                        <circle
+                          class="progress-ring__background"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                        <circle
+                          class="progress-ring__circle"
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          stroke-width="10"
+                        />
+                      </svg>
+                      <div class="chart-label">
+                        <span class="percentage">0%</span>
+                        <span class="status-name">Not Started</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-completed">
+                  <h2 class="heading-red">
+                    <svg
+                      width="23"
+                      height="23"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use
+                        href="assets/icons/icons.svg#icon-completed"
+                      ></use></svg
+                    >Completed Task
+                  </h2>
+                  <ul class="task-list completed-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="calendar" class="page">
+          <h2>Calendar</h2>
+          <p>This is the calendar section.</p>
+        </section>
+
+        <section id="settings" class="page">
+          <h2>Settings</h2>
+          <p>This is the settings section.</p>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
